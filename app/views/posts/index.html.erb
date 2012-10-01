@@ -1,0 +1,15 @@
+<h1>Posts (<%= @posts.length %>)</h1>
+<div class="nav_link"><%= link_to 'Create a New Post', new_post_path %></div>
+<br />
+<% @posts.each do |post| %>
+  <p>
+    <span class="title"><%= link_to post.title, post_path(post) %></span>
+    <span class="name">by <%= post.name %></span>
+  </p>
+  <p>
+    <span class="contents"><%= post.content %></span>
+  </p>
+  <p class="timestamp"><%= post.created_at %></p>
+  <br />
+<% end %>
+
